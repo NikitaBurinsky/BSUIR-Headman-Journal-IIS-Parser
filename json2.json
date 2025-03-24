@@ -1,0 +1,59 @@
+{
+  "Lessons": [
+    {
+      "Id": 1,
+      "DateString": "2025-03-12",
+      "NameAbbrev": "Math",
+      "LessonTypeAbbrev": "Lecture",
+      "LessonPeriod": {
+        "LessonPeriodHours": 1.5,
+        "StartTime": "09:00",
+        "EndTime": "10:30"
+      },
+      "SubGroup": 1,
+      "Students": [
+        {
+          "Id": 101,
+          "Fio": "Ivanov Ivan Ivanovich",
+          "Omission": {
+            "Id": 1,
+            "MissedHours": 1.5,
+            "RespectfulOmission": true
+          }
+        },
+        {
+          "Id": 102,
+          "Fio": "Petrova Anna Sergeevna",
+          "Omission": {
+            "Id": 2,
+            "MissedHours": 0,
+            "RespectfulOmission": false
+          }
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "DateString": "2025-03-12",
+      "NameAbbrev": "Physics",
+      "LessonTypeAbbrev": "Practical",
+      "LessonPeriod": {
+        "LessonPeriodHours": 2,
+        "StartTime": "11:00",
+        "EndTime": "13:00"
+      },
+      "SubGroup": 2,
+      "Students": [
+        {
+          "Id": 201,
+          "Fio": "Sidorov Alexey Viktorovich",
+          "Omission": {
+            "Id": 3,
+            "MissedHours": 2,
+            "RespectfulOmission": false
+          }
+        }
+      ]
+    }
+  ]
+}
