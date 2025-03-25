@@ -43,15 +43,13 @@ namespace HLApi
 			string jsonString = await response.Content.ReadAsStringAsync();
 
 			return await DeParseResponse(jsonString); ;
-		}
+		} 
 
 		private async Task<Day> DeParseResponse(string njsonString)
 		{
 			// Десериализация JSON в объект
 			Day Day = JsonSerializer.Deserialize<Day>(njsonString);
-
-			// Вывод данных для проверки
-			/*
+/*
 			foreach (var lesson in Day.lessons)
 			{
 				Console.WriteLine($"Lesson ID: {lesson.id}");

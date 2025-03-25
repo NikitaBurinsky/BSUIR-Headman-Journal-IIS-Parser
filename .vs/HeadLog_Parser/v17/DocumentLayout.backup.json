@@ -11,20 +11,12 @@
       "RelativeMoniker": "D:0:0:{5A3A9864-1CDD-4D51-B641-0B1953EA56B3}|HeadLog_Parser.csproj|solutionrelative:exceltablewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5A3A9864-1CDD-4D51-B641-0B1953EA56B3}|HeadLog_Parser.csproj|c:\\users\\formatis\\documents\\github\\iis-headmanjournalparser\\bsuir-headman-journal-iis-parser\\totalweekomissionsresulter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A3A9864-1CDD-4D51-B641-0B1953EA56B3}|HeadLog_Parser.csproj|solutionrelative:totalweekomissionsresulter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5A3A9864-1CDD-4D51-B641-0B1953EA56B3}|HeadLog_Parser.csproj|c:\\users\\formatis\\documents\\github\\iis-headmanjournalparser\\bsuir-headman-journal-iis-parser\\dateparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A3A9864-1CDD-4D51-B641-0B1953EA56B3}|HeadLog_Parser.csproj|solutionrelative:dateparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A3A9864-1CDD-4D51-B641-0B1953EA56B3}|HeadLog_Parser.csproj|c:\\users\\formatis\\documents\\github\\iis-headmanjournalparser\\bsuir-headman-journal-iis-parser\\headlog_parser.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{5A3A9864-1CDD-4D51-B641-0B1953EA56B3}|HeadLog_Parser.csproj|solutionrelative:headlog_parser.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A3A9864-1CDD-4D51-B641-0B1953EA56B3}|HeadLog_Parser.csproj|c:\\users\\formatis\\documents\\github\\iis-headmanjournalparser\\bsuir-headman-journal-iis-parser\\lessonsjsontree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A3A9864-1CDD-4D51-B641-0B1953EA56B3}|HeadLog_Parser.csproj|solutionrelative:lessonsjsontree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A3A9864-1CDD-4D51-B641-0B1953EA56B3}|HeadLog_Parser.csproj|c:\\users\\formatis\\documents\\github\\iis-headmanjournalparser\\bsuir-headman-journal-iis-parser\\headlog_parser.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5A3A9864-1CDD-4D51-B641-0B1953EA56B3}|HeadLog_Parser.csproj|solutionrelative:headlog_parser.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,38 +42,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HeadLog_Parser",
-              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\HeadLog_Parser.csproj",
-              "RelativeDocumentMoniker": "HeadLog_Parser.csproj",
-              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\HeadLog_Parser.csproj",
-              "RelativeToolTip": "HeadLog_Parser.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-24T13:24:39.576Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LessonsJsonTree.cs",
-              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\LessonsJsonTree.cs",
-              "RelativeDocumentMoniker": "LessonsJsonTree.cs",
-              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\LessonsJsonTree.cs",
-              "RelativeToolTip": "LessonsJsonTree.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAB8AAAAdAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "TotalWeekOmissionsResulter.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\TotalWeekOmissionsResulter.cs",
+              "RelativeDocumentMoniker": "TotalWeekOmissionsResulter.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\TotalWeekOmissionsResulter.cs",
+              "RelativeToolTip": "TotalWeekOmissionsResulter.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAMwCYAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T09:57:56.072Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HeadLog_Parser.csproj",
-              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\HeadLog_Parser.csproj",
-              "RelativeDocumentMoniker": "HeadLog_Parser.csproj",
-              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\HeadLog_Parser.csproj",
-              "RelativeToolTip": "HeadLog_Parser.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-22T14:19:05.275Z"
+              "WhenOpened": "2025-03-25T12:42:38.657Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -91,21 +61,23 @@
               "RelativeDocumentMoniker": "ExcelTableWriter.cs",
               "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\ExcelTableWriter.cs",
               "RelativeToolTip": "ExcelTableWriter.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAYwD4AAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAgwGUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T14:19:28.658Z"
+              "WhenOpened": "2025-03-22T14:19:28.658Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DateParser.cs",
               "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\DateParser.cs",
               "RelativeDocumentMoniker": "DateParser.cs",
               "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\DateParser.cs",
               "RelativeToolTip": "DateParser.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAkwE0AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T21:17:29.166Z"
+              "WhenOpened": "2025-03-11T21:17:29.166Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -115,7 +87,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\IIS-HeadmanJournalParser\\BSUIR-Headman-Journal-IIS-Parser\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBsAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-11T05:53:25.553Z",
               "EditorCaption": ""

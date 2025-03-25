@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HeadLog_Parser")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4423db5c78fa639f78d1f1a0ea9891d5f248f04e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eed8ef6276de6a2b0a202b322559e295380819d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("HeadLog_Parser")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HeadLog_Parser")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

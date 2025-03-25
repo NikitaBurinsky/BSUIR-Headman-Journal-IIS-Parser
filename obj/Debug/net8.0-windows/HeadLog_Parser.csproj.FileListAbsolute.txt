@@ -63,3 +63,4 @@ C:\Users\Formatis\Documents\GitHub\IIS-HeadmanJournalParser\BSUIR-Headman-Journa
 C:\Users\Formatis\Documents\GitHub\IIS-HeadmanJournalParser\BSUIR-Headman-Journal-IIS-Parser\obj\Debug\net8.0-windows\HeadLog_Parser.pdb
 C:\Users\Formatis\Documents\GitHub\IIS-HeadmanJournalParser\BSUIR-Headman-Journal-IIS-Parser\obj\Debug\net8.0-windows\HeadLog_Parser.genruntimeconfig.cache
 C:\Users\Formatis\Documents\GitHub\IIS-HeadmanJournalParser\BSUIR-Headman-Journal-IIS-Parser\obj\Debug\net8.0-windows\ref\HeadLog_Parser.dll
+C:\Users\Formatis\Documents\GitHub\IIS-HeadmanJournalParser\BSUIR-Headman-Journal-IIS-Parser\obj\Debug\net8.0-windows\HeadLog_Parser.sourcelink.json

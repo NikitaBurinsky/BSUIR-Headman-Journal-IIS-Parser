@@ -37,16 +37,4 @@ namespace HLApi
 		public int subGroup { get; set; }
 		public List<StudentOmission>? students { get; set; }
 	}
-
-	class TestDeserializeLessons
-	{
-		public void Deserial()
-		{
-			json = Console.ReadLine();
-			Day Day = JsonSerializer.Deserialize<Day>(json);
-			Console.WriteLine(Day);
-
-		}
-		string json { get; set; }
-	}
 }
