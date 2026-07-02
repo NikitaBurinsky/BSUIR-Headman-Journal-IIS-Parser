@@ -13,6 +13,7 @@ namespace HLApi
 		int studentsCount;
 		Dictionary<string, int> studentsIndByName = new Dictionary<string, int>();//!!Подумать об оптимизации
 		TotalWeekOmissionsResulter TotalWeekOmissionsResulter;
+		List<string> studentsNames = new List<string>();
 		public void CreateAndUseBook(string bookName)
 		{
 			ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -21,7 +22,7 @@ namespace HLApi
 			workbook = package.Workbook;
 		}
 
-		public void WriteWeek(List<Day> days, DateOnly dateOnly, int weekInd)
+		public bool WriteWeek(List<Day> days, DateOnly dateOnly, int weekInd)
 		{
 			if (days.Count != 6)
 				throw new Exception($"Dev:Week has to include 7 days:1042:days.Count={days.Count}");
@@ -34,8 +35,13 @@ namespace HLApi
 				"Пятница",
 				"Суббота"
 			};
-			InitStudentsListsAndDictionaries(days);
-			TotalWeekOmissionsResulter = new TotalWeekOmissionsResulter(days, studentsCount);
+			if(InitStudentsListsAndDictionaries(days)==-1)
+			{
+			workbook.Worksheets.Add(dateOnly.ToString() + " Нет занятий");
+			studentsIndByName.Clear();
+			return false;
+			}
+			TotalWeekOmissionsResulter = new TotalWeekOmissionsResulter(days, studentsCount, studentsIndByName);
 			for (int i = 0; i < 6; ++i)
 			{
 				WriteDay(days[i].lessons, dateOnly, week[i], weekInd, i, 2);
@@ -43,8 +49,8 @@ namespace HLApi
 				WriteWeekRightTrailer(days, weekInd);
 				dateOnly = dateOnly.AddDays(1);
 			}
-
 			studentsIndByName.Clear();
+			return true;
 		}
 		private void WriteWeekRightTrailer(List<Day> week, int sheetInd)
 		{
@@ -57,7 +63,6 @@ namespace HLApi
 			Cells["AK2:AN2"].Merge = true;
 			Cells["AG2"].Value = "по уваж пр.";
 			Cells["AK2"].Value = "по неуваж пр.";
-
 			Cells[(int)RowType.LessonsTypes, 33].Value = "ЛК";
 			Cells[(int)RowType.LessonsTypes, 34].Value = "ЛР";
 			Cells[(int)RowType.LessonsTypes, 35].Value = "ПЗ";
@@ -69,25 +74,21 @@ namespace HLApi
 
 			for(int s = 0; s < studentsCount; ++s)
 			{
+				var StudentWeekOmisisionsType = TotalWeekOmissionsResulter
+					.studentWeekOmissions[s].StudentOmissionsOnLessonType;
 				Cells[(int)RowType.OmmisionsStart + s, 33].Value =
-					TotalWeekOmissionsResulter.studentWeekOmissions[s]
-					.StudentOmissionsOnLessonType["ЛК"].respectful;
+					StudentWeekOmisisionsType["ЛК"].respectful;
 				Cells[(int)RowType.OmmisionsStart + s, 34].Value =
-					TotalWeekOmissionsResulter.studentWeekOmissions[s]
-					.StudentOmissionsOnLessonType["ЛР"].unrespectful;
+					StudentWeekOmisisionsType["ЛР"].respectful;
 				Cells[(int)RowType.OmmisionsStart + s, 35].Value =
-					TotalWeekOmissionsResulter.studentWeekOmissions[s]
-					.StudentOmissionsOnLessonType["ПЗ"].respectful;
+					StudentWeekOmisisionsType["ПЗ"].respectful;
 				Cells[(int)RowType.OmmisionsStart + s, 36].Value = TotalWeekOmissionsResulter.r_StudentTotalOmmisionsOnType(s);
 				Cells[(int)RowType.OmmisionsStart + s, 37].Value =
-					TotalWeekOmissionsResulter.studentWeekOmissions[s]
-					.StudentOmissionsOnLessonType["ЛК"].unrespectful;
+					StudentWeekOmisisionsType["ЛК"].unrespectful;
 				Cells[(int)RowType.OmmisionsStart + s, 38].Value =
-					TotalWeekOmissionsResulter.studentWeekOmissions[s]
-					.StudentOmissionsOnLessonType["ЛР"].respectful;
+					StudentWeekOmisisionsType["ЛР"].unrespectful;
 				Cells[(int)RowType.OmmisionsStart + s, 39].Value =
-					TotalWeekOmissionsResulter.studentWeekOmissions[s]
-					.StudentOmissionsOnLessonType["ПЗ"].unrespectful;
+					StudentWeekOmisisionsType["ПЗ"].unrespectful;
 				Cells[(int)RowType.OmmisionsStart + s, 40].Value = TotalWeekOmissionsResulter.unr_StudentTotalOmmisionsOnType(s);
 			}
 
@@ -105,6 +106,8 @@ namespace HLApi
 		private int InitStudentsListsAndDictionaries(List<Day> days)
 		{
 			studentsCount = -1;
+			if (days[0].lessons.Count == 0) 
+				return -1; 
 			for (int i = 0; i < days.Count; ++i)
 				for (int j = 0; j < days[i].lessons.Count; ++j)
 					if (days[i].lessons[j].subGroup == 0)
@@ -114,8 +117,6 @@ namespace HLApi
 						i = days.Count;
 						break;
 					}
-			if (studentsCount == -1)
-				throw new Exception("List of student was not found. Please connect with developer");
 			return studentsCount;
 		}
 		private void CreateStudentsIndexListByName(List<StudentOmission> stunts)
@@ -123,6 +124,7 @@ namespace HLApi
 			for (int i = 0; i < stunts.Count; ++i)
 			{
 				studentsIndByName.Add(stunts[i].fio, i);
+				studentsNames.Add(stunts[i].fio);
 			}
 		}
 
@@ -132,11 +134,10 @@ namespace HLApi
 			//1
 			sheet.Cells[1, 1, (int)RowType.OmmisionsStart - 1, 1].Merge = true;
 			int student = 0;
-			for (var i = RowType.OmmisionsStart; i < RowType.OmmisionsEnd; ++i)
+			for (var i = RowType.OmmisionsStart; i < RowType.OmmisionsEnd && (i-RowType.OmmisionsStart) < studentsCount; ++i)
 			{
 				sheet.Cells[(int)i, 1].Value = i - RowType.OmmisionsStart + 1;
-				if (day.lessons.Count != 0 && student < day.lessons[0].students.Count)
-					sheet.Cells[(int)i, 2].Value = day.lessons[0].students[student++].fio;
+				sheet.Cells[(int)i, 2].Value = studentsNames[i - RowType.OmmisionsStart];
 			}
 			sheet.Columns[1].Width = 2.7;
 			//2
@@ -154,7 +155,7 @@ namespace HLApi
 		}
 		private void WriteDay(List<Lesson> lessons, DateOnly dateOnly, string weekDayName, int weekInd, int dayOffset, int tableOffset = 0)
 		{
-			while (workbook.Worksheets.Count < weekInd + 1)
+			if (workbook.Worksheets.Count < weekInd + 1)
 				workbook.Worksheets.Add(dateOnly.ToString());
 			var sheet = workbook.Worksheets[weekInd];
 			int startCol = dayOffset * 5 + 1 + tableOffset;
@@ -233,6 +234,7 @@ namespace HLApi
 		}
 		public void SaveBook()
 		{
+			if(package.Workbook.Worksheets.Count > 0)
 			File.WriteAllBytes(filepath, package.GetAsByteArray());
 		}
 

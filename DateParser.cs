@@ -31,7 +31,7 @@ namespace HLApi
 		public async Task<Day>? GetOmmisionsByDateRespone(DateOnly date)
 		{
 			HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Get,
-				@$"https://iis.bsuir.by/api/v1/grade-book/by-date?date={date.Year}-{date.Month.ToString("D2")}-{date.Day.ToString("D2")}T06:42:06.64Z");
+				@$"https://iis.bsuir.by/api/v1/grade-book/by-date?date={date.Year}-{date.Month.ToString("D2")}-{date.Day.ToString("D2")}");
 			Console.WriteLine($"Request to GET : {message.RequestUri}");
 
 			var response = httpClient.Send(message);
@@ -49,6 +49,7 @@ namespace HLApi
 		{
 			// Десериализация JSON в объект
 			Day Day = JsonSerializer.Deserialize<Day>(njsonString);
+
 /*
 			foreach (var lesson in Day.lessons)
 			{

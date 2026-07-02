@@ -9,20 +9,22 @@ namespace HLApi
 	class TotalWeekOmissionsResulter
 	{
 		public List<StudentWeekOmissions> studentWeekOmissions = new List<StudentWeekOmissions>(); 
-		public TotalWeekOmissionsResulter(List<Day> Week, int StudentsCount)
+		public TotalWeekOmissionsResulter(List<Day> Week, int StudentsCount, Dictionary<string, int> studIndexByNames)
 		{
 			for (int i = 0; i < StudentsCount; ++i)
 				studentWeekOmissions.Add(new StudentWeekOmissions());
 
 			foreach (Day day in Week)
 				foreach (Lesson lesson in day.lessons)
-					for (int so = 0; so < lesson.students.Count; ++so)
+					for (int s = 0; s < lesson.students.Count; ++s)
 					{
-						var omission = lesson.students[so];
-						if (omission.omission != null)
+						var omission = lesson.students[s];
+						int so = studIndexByNames[omission.fio];
+						if (omission.omission != null && lesson.nameAbbrev != "К.Ч.")
 						{
 							float skipedHours = omission.omission.missedHours;
-							(float r, float ur) temp = studentWeekOmissions[so].StudentOmissionsOnLessonType[lesson.lessonTypeAbbrev];
+							(float r, float ur) temp = (studentWeekOmissions[so].StudentOmissionsOnLessonType[lesson.lessonTypeAbbrev].respectful
+									 , studentWeekOmissions[so].StudentOmissionsOnLessonType[lesson.lessonTypeAbbrev].unrespectful);
 							if (omission.omission.respectfulOmission)
 								temp.r += skipedHours;
 							else
